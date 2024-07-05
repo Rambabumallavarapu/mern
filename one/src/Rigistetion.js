@@ -38,8 +38,25 @@ function Rigistetion() {
       email: '',
       password: '',
       conformPassword: '',
-      avathar: null
+      avathar: ""
     });
+    const formDataToSend = new FormData();
+    for (const key in formData) {
+      formDataToSend.append(key, formData[key]);
+    }
+    const options = {
+      method: 'POST',
+      // headers: { 'Content-Type': 'application/json' },
+      body:formDataToSend
+  };
+
+  fetch(`http://localhost:1995/register`, options)
+      .then(response => response.json())
+      
+      .catch(error => {
+          console.error('Error:', error);
+        
+      });
   };
 
   return (
