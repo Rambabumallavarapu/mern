@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 function Rigistetion() {
   const [data, setData] = useState([]);
@@ -26,7 +26,7 @@ function Rigistetion() {
       });
     }
   };
-
+useEffect(()=>{},[data])
   const handleSubmit = (e) => {
     e.preventDefault();
     setData([...data, formData]);
